@@ -1,0 +1,119 @@
+<!--
+  Generated template for the EventDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Event Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="body">
+    <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+              <img src="assets/imgs/author-01.png"/>
+          </ion-avatar>
+          <h2>Marty McFly</h2>
+          <p>November 5, 1955</p>
+        </ion-item>
+      
+        <img src="assets/imgs/events.jpg"/>
+      
+        <div class="" text-left padding>
+            <label for="" class="type-of-celebrity">Carft</label>
+            <h1 class="celebrity-title">The Oreous Pillow</h1>
+            <p class="celebrity-para">One smart, reusable notebook to last the rest of your life? One smart, reusable notebook to last the rest of your life?  One smart, reusable notebook to last the rest of your life?  One smart, reusable notebook to last the rest of your life? One smart, reusable notebook to last the rest of your life? </p>
+            <!-- <div class="project-love-author">
+                <div class="author-profile">
+                  <a class="author-avatar" href="#"><img src="assets/imgs/author-01.png" alt=""></a>by <span class="author-name" href="#">John Doe</span>
+                </div>
+                <div class="author-address"><span class="ion-location"></span>Mumbai, Maharashtra, India</div>
+              </div> -->
+              <div class="project-love-author">
+                  <div class="author-profile">
+                    <ul class="artist-img">
+                      <li>
+                        <img src="assets/imgs/author-01.png" alt="">
+                        <div class="artist-name" href="#" style="color:#000;">Arijit Sing</div>
+                      </li>
+                      <li>
+                        <img src="assets/imgs/author-02.png" alt="">
+                        <div class="artist-name" href="#" style="color:#000;">Monali</div>
+                      </li>
+                      <li>
+                        <img src="assets/imgs/author-03.png" alt="">
+                        <div class="artist-name" href="#" style="color:#000;">Salman</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            <progress-bar [progress]="70" [color]="'#488aff'"></progress-bar>
+
+            <div class="progress-text">
+            <div class="process-info">
+                <div class="process-pledged"><span><i class="fa fa-inr" aria-hidden="true"></i> 630</span>pledged</div>
+                <div class="process-funded"><span>26%</span>funded</div>
+                <div class="process-time"><span>2</span>days ago</div>
+            </div>
+            </div>
+            <h2 ion-text color="danger" padding>Book Tickets</h2>
+            <ion-row>
+                
+              <ion-col col-8>
+                  <ion-item>
+                      <ion-label floating color="danger">Number of Tickets</ion-label>
+                      <ion-input type="number" value=""></ion-input>
+                    </ion-item>
+              </ion-col>
+              <ion-col col-4 margin-top padding-top>
+                  <button ion-button color="danger">Book Now</button>
+              </ion-col>
+            </ion-row>
+              
+
+          </div>      
+      </ion-card>
+
+      <ion-card>
+          <ion-item>
+              <h2>Comments</h2>
+            </ion-item>
+          <ion-list>
+    
+              <ion-item>
+                <ion-label floating color="danger">Name</ion-label>
+                <ion-input type="text" placeholder="Name"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label floating color="danger">Email</ion-label>
+                <ion-input type="text" placeholder="Email"></ion-input>
+              </ion-item>
+            
+            </ion-list>
+            <div style="margin:0px auto; text-align: center;">
+            <button ion-button color="danger" round>Submit</button>
+          </div>
+        </ion-card>
+        <ion-fab right bottom>
+            <button ion-fab color="light"><ion-icon name="share"></ion-icon></button>
+            <ion-fab-list side="left">
+              <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+              <!-- <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button> -->
+              <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+            </ion-fab-list>
+          </ion-fab>
+
+
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-menu [content]="content">
+  <ion-header no-padding no-margin>
+    <ion-toolbar no-padding no-margin class="toolbar-nopadding manu-heading">
+      <ion-title no-padding no-margin class="user-position">
+        <img src="assets/imgs/c2.jpg"/>
+        <h6 ion-text color="light" text-uppercase>leonardo dicaprio</h6>
+        <h5 ion-text color="dark" text-uppercase>Last seen 2018-8-10</h5>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="add-circle"></ion-icon> 
+        {{p.title}}
+      </button>
+      <!-- <ion-item>
+        <button menuClose ion-item color="primary">
+          <ion-icon ios="ios-home" md="md-home" padding-left></ion-icon> Home
+        </button>
+        <button menuClose ion-item>
+          <ion-icon ios="ios-radio-button-on" md="md-radio-button-on" color="primary" padding-left></ion-icon> Your City Events
+        </button>
+        <button menuClose ion-item >
+          <ion-icon ios="ios-radio-button-off" md="md-radio-button-off" color="primary" padding-left></ion-icon> All Events
+        </button>
+        <button menuClose ion-item >
+          <ion-icon ios="ios-aperture" md="md-aperture" color="primary" padding-left></ion-icon> Celebrity
+        </button>
+        <button menuClose ion-item >
+          <ion-icon ios="ios-home" md="md-home" color="primary" padding-left></ion-icon> Register
+        </button>
+        <button menuClose ion-item >
+          <ion-icon ios="ios-exit" md="md-exit" color="primary" padding-left></ion-icon> Login
+        </button>
+      </ion-item> -->
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

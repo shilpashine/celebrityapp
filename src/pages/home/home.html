@@ -1,0 +1,295 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title color="light">PartyWithStar</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="goToNotification()">
+          <ion-icon name="notifications" color="light">
+              <ion-badge id="notifications-badge" color="info">5</ion-badge>
+          </ion-icon>
+        </button>
+				<button ion-button icon-only (click)="goToSearch()">
+					<ion-icon name="search" color="light"></ion-icon>
+				</button>
+			</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="body">
+<div class="celebrity-container">
+  <h3 ion-text color="light" >Events for Your City
+    <span text-right float-right class="more-class" color="secondary" (click)="goToAllEvents()">More</span>
+  </h3>
+  <ion-slides *ngIf="itemsdata" slidesPerView="1.5" spaceBetween="10" autoplay="2000" centeredSlides="true" loop="true">
+    <!-- <ng-template> -->
+      <ion-slide  *ngFor="let data of itemsdata">
+          <div class="event-bg" text-left (click)="goToSingleEvent(data, item)">
+              <label class="type-of-celebrity">
+                <span  *ngFor="let data_cat of data.event_categories">
+                  {{ 
+                  data_cat?.category?.category_name
+                }}</span>
+              </label>
+              <h5 class="celebrity-title"> {{ 
+                  data?.event_title
+                }}</h5>
+              <p class="celebrity-para">{{ 
+                  data?.event_description
+                }} </p>
+              <label for="" class="type-of-celebrity">Artist list</label>
+              <div class="project-love-author">
+                  <div class="author-profile">
+
+                    <ul class="artist-img"  *ngFor="let data_celeb of data.event_celebrities">
+                      <li>
+                        <img src="{{url_imp}}/img/medium/{{data_celeb?.celebrity_details[0]?.celebrity_photos[0]?.image}}" alt="">
+                        <div class="artist-name" href="#">{{data_celeb?.celebrity_details[0]?.name}}</div>
+                      </li>
+                      <!-- <li>
+                        <img src="assets/imgs/author-02.png" alt="">
+                        <div class="artist-name" href="#">Monali</div>
+                      </li>
+                      <li>
+                        <img src="assets/imgs/author-03.png" alt="">
+                        <div class="artist-name" href="#">Salman</div>
+                      </li> -->
+                    </ul>
+
+                  </div>
+                </div>
+                
+                  
+                       
+                          <span *ngFor="let data_per of percent_arry">
+                                              
+
+              <progress-bar progress="{{ data_per}}" [color]="'#488aff'"></progress-bar>          </span>
+              <div class="progress-text">
+                  <div class="process-time-events"><span color="blue">  {{data?.approx_start_date | timeAgo}}</span></div>
+              </div>
+            </div>
+      </ion-slide>
+    <!-- </ng-template> -->
+    <!-- <ion-slide>
+        <div class="event-bg" text-left (click)="goToSingleEvent()">
+            <label for="" class="type-of-celebrity">Carft</label>
+            <h5 class="celebrity-title">The Oreous Pillow</h5>
+            <p class="celebrity-para">One smart, reusable notebook to last the rest of your life? </p>
+            <label for="" class="type-of-celebrity">Artist list</label>
+            <div class="project-love-author">
+                <div class="author-profile">
+                  <ul class="artist-img">
+                    <li>
+                      <img src="assets/imgs/author-01.png" alt="">
+                      <div class="artist-name" href="#">Arijit Sing</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-02.png" alt="">
+                      <div class="artist-name" href="#">Monali</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-03.png" alt="">
+                      <div class="artist-name" href="#">Salman</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <progress-bar [progress]="50" [color]="'#488aff'"></progress-bar>
+            <div class="progress-text">
+                <div class="process-time-events"><span color="blue">2</span>days ago</div>
+            </div>
+          </div>
+    </ion-slide>
+    <ion-slide >
+        <div class="event-bg" text-left (click)="goToSingleEvent()">
+            <label for="" class="type-of-celebrity">Carft</label>
+            <h5 class="celebrity-title">The Oreous Pillow</h5>
+            <p class="celebrity-para">One smart, reusable notebook to last the rest of your life? </p>
+            <label for="" class="type-of-celebrity">Artist list</label>
+            <div class="project-love-author">
+                <div class="author-profile">
+                  <ul class="artist-img">
+                    <li>
+                      <img src="assets/imgs/author-01.png" alt="">
+                      <div class="artist-name" href="#">Arijit Sing</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-02.png" alt="">
+                      <div class="artist-name" href="#">Monali</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-03.png" alt="">
+                      <div class="artist-name" href="#">Salman</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <progress-bar [progress]="50" [color]="'#488aff'"></progress-bar>
+            <div class="progress-text">
+                <div class="process-time-events"><span color="blue">2</span>days ago</div>
+            </div>
+          </div>
+    </ion-slide>
+    <ion-slide >
+        <div class="event-bg" text-left (click)="goToSingleEvent()">
+            <label for="" class="type-of-celebrity">Carft</label>
+            <h5 class="celebrity-title">The Oreous Pillow</h5>
+            <p class="celebrity-para">One smart, reusable notebook to last the rest of your life? </p>
+            <label for="" class="type-of-celebrity">Artist list</label>
+            <div class="project-love-author">
+                <div class="author-profile">
+                  <ul class="artist-img">
+                    <li>
+                      <img src="assets/imgs/author-01.png" alt="">
+                      <div class="artist-name" href="#">Arijit Sing</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-02.png" alt="">
+                      <div class="artist-name" href="#">Monali</div>
+                    </li>
+                    <li>
+                      <img src="assets/imgs/author-03.png" alt="">
+                      <div class="artist-name" href="#">Salman</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <progress-bar [progress]="50" [color]="'#488aff'"></progress-bar>
+            <div class="progress-text">
+                <div class="process-time-events"><span color="blue">2</span>days ago</div>
+            </div>
+          </div>
+    </ion-slide> -->
+    <!-- <ion-slide>
+        <div class="event-bg" text-left>
+            <label for="" class="type-of-celebrity">Carft</label>
+            <h5 class="celebrity-title">The Oreous Pillow</h5>
+            <p class="celebrity-para">One smart, reusable notebook to last the rest of your life? That's not magic, that's the </p>
+            <div class="project-love-author">
+                <div class="author-profile">
+                  <a class="author-avatar" href="#"><img src="assets/imgs/author-01.png" alt=""></a>by <span class="author-name" href="#">John Doe</span>
+                </div>
+                <div class="author-address"><span class="ion-location"></span>Mumbai, Maharashtra, India</div>
+              </div>
+            <progress-bar [progress]="50" [color]="'#488aff'"></progress-bar>
+            <div class="progress-text">
+            <div class="process-info">
+                <div class="process-pledged"><span><i class="fa fa-inr" aria-hidden="true"></i> 630</span>pledged</div>
+                <div class="process-funded"><span>26%</span>funded</div>
+                <div class="process-time"><span>2</span>days ago</div>
+            </div>
+            </div>
+          </div>
+    </ion-slide> -->
+  </ion-slides>
+</div>
+
+
+<div class="celebrity-container">
+  <h3 ion-text color="light" >Celebrity
+    <span text-right float-right class="more-class" color="secondary" (click)="goToAllCelebrity()">More</span>
+  </h3>
+  <ion-slides *ngIf="items" slidesPerView="3.5" spaceBetween="10">
+      <!-- <ng-template ngFor="let data of items"> -->
+        <ion-slide *ngFor="let data of items">  
+          
+        <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+            
+            <img src="http://localhost/git_project/WebIdeasole/celebritycalling/img/medium/{{data?.celebrity_photos[0]?.image}}" alt="">
+          </div>
+        </ion-slide>
+      <!-- </ng-template> -->
+    <!-- <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c2.jpg" alt="">
+      </div>  *ngFor="let data of items"
+    </ion-slide> -->
+    <!-- <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c3.jpg" alt="">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c4.png" alt="">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c5.jpg" alt="">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c6.jpg" alt="">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c7.jpg" alt="">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="celebrity-bg" (click)="goToSingleCelebrity()">
+        <img src="assets/imgs/c8.jpeg" alt="">
+      </div>
+    </ion-slide> -->
+  </ion-slides>
+</div>
+
+<div class="celebrity-container">
+  <h3 ion-text color="light">All Events
+    <span text-right float-right class="more-class" color="secondary" (click)="goToAllEvents()">More</span>
+  </h3>
+
+  <ion-slides *ngIf="itemsalldata" slidesPerView="1.5" spaceBetween="10" autoplay="2000" centeredSlides="true" loop="true">
+    <ion-slide *ngFor="let data_list of itemsalldata">
+        <div class="event-bg" text-left (click)="goToSingleEvent()">
+            <!-- <label for="" class="type-of-celebrity">{{data_list?.event_categories}} </label> -->
+            <h5 class="celebrity-title">{{data_list?.event_title}}</h5>
+            <p class="celebrity-para">{{data_list?.event_description}} </p>
+            <label for="" class="type-of-celebrity">Artist list</label>
+            <div class="project-love-author">
+                <div class="author-profile">
+                    <ul class="artist-img"  *ngFor="let data_celeblist of data_list.event_celebrities">
+                        <li>
+                          <img src="http://localhost/git_project/WebIdeasole/celebritycalling/img/medium/{{data_celeblist?.celebrity_details[0]?.celebrity_photos[0]?.image}}" alt="">
+                          <div class="artist-name" href="#">{{data_celeblist?.celebrity_details[0]?.name}} </div>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+              <span *ngFor="let data_per_list of percent_arrylist">
+            <progress-bar progress="{{ data_per_list}}" [color]="'#488aff'"></progress-bar>
+            </span>
+            <div class="progress-text">
+                <div class="process-time-events"><span color="blue">  {{data_list?.approx_start_date | timeAgo}}</span></div>
+            </div>
+          </div>
+    </ion-slide>
+    
+  </ion-slides>
+</div>
+
+
+<div class="celebrity-container">
+  <h3 ion-text color="light" >Discover</h3>
+  <ion-slides slidesPerView="2.8" spaceBetween="10"  *ngIf="catdata">
+    <ion-slide *ngFor="let data_cat of catdata">
+      <div class="discover-bg" text-center (click)="goToAllCelebrity()">
+        <h5 class="celebrity-title">{{data_cat?.category_name}}</h5>
+      </div>
+    </ion-slide>
+   
+  </ion-slides>
+</div>
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
