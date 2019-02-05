@@ -1,0 +1,310 @@
+/*index*/
+.toolbar-background-md, .toolbar-background-ios{
+    border-color: transparent !important;
+    background: transparent !important;
+}
+.event-bg{
+    position: relative;
+    background-image:linear-gradient(to right , rgb(253, 28, 76),rgba(253, 28, 76, 0.53)), url(../../assets/imgs/events.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    /* box-shadow: -1px 3px 8px 0px #c7c7c7; */
+}
+.events-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.header-md::after, .header-ios::after{
+    content: none !important;
+}
+
+.body{
+    background-image:linear-gradient(to top, rgba(253, 28, 76, 0.2),rgba(253, 28, 76, 0.3)), url(../../assets/imgs/event-production.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.progress-outer{
+    padding: 0 !important;
+    margin: 10px 0%;
+}
+.progress-inner{
+    height: 10px;
+    font-size: 9px;
+}
+.type-of-celebrity{
+    font-size: 12px;
+    margin: 0;
+}
+.celebrity-title{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    
+}
+.celebrity-para{
+    font-size: 1.2rem;
+    margin: 0.3rem;
+    
+}
+.progress-text .process-info{
+    letter-spacing: -0.3em;
+}
+.progress-text .process-info div{
+    color: #999;
+    display: inline-block; 
+    width: auto;
+    letter-spacing: normal;
+    margin-right: 10px;
+    font-size: 10px;
+}
+.progress-text .process-info div:last-child span{
+    margin-right: 0px;
+}
+.progress-text .process-info span{
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+}
+.project-love .process-info span{
+    font-size: 16px;
+}
+/* .swiper-slide{
+    width: 272px !important;
+} */
+
+.author-address{
+    text-align: left;
+    font-size: 12px;
+}
+
+.project-love-author .author-profile{
+    text-align: left;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.project-love-author{
+    margin-bottom: 0px;
+}
+
+
+.project-love-item .process-info div{
+    color: #555555;
+}
+.author-profile a{
+    display: inline-block;
+}
+.author-profile .author-avatar{
+    margin-right: 10px;
+}
+
+.author-profile .author-avatar img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#notification-button {            
+    position: relative;
+    top:1px;
+    right: 1px;
+    overflow: visible!important;
+}
+
+
+#notifications-badge {
+    background-color: red;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    border-radius: 100%;
+}
+.celebrity-bg{   
+    color: #fff;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.celebrity-bg img{
+    border-radius: 1rem;
+    width: 100% !important;
+    height: 80px !important;
+}
+.celebrity-bg::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 94%;
+    background: radial-gradient( rgba(253, 28, 76, 0.2),rgba(253, 28, 76, 0.3));
+    content: '';
+    border-radius: 1rem;
+}
+.celebrity-container{
+    padding-bottom: 2rem;
+}
+
+.process-time-events{
+    font-size: 1rem;
+}
+.process-time-events span{
+    margin-right: 0.2rem;
+    font-size: 1.3rem
+}
+.artist-img{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.artist-img li{
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    margin-right: 0.6rem;
+}
+.artist-img li img{
+width: 30px;
+height: 30px;}
+/* .artist-img li:first-child{
+    left: 0;
+} */
+/* .artist-img li:nth-child(2){
+    left: 40%;
+    position: absolute;
+    top:0
+}
+.artist-img li:nth-child(3){
+    left: 83%;
+    position: absolute;
+    top:0
+}
+.artist-img li:nth-child(4){
+    left: -40%;
+} */
+.artist-name{
+    font-size: 1rem;
+    color: #f9f9f9;
+}
+.more-class{
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    background:  linear-gradient(to left, rgba(253, 28, 76, 1),rgba(253, 28, 76, 1));
+    border-radius: 0.3rem;
+    text-transform: uppercase;
+}
+/*index*/
+
+/*menu*/
+/* .md .menu-inner, .ios .menu-inner {
+    background: linear-gradient(45deg, #fd81b5 0%, #c961f7 50%, #8089ff 100%)  !important;
+} */
+/* .content-md, .content-ios{
+    background-color: inherit !important; 
+} */
+.toolbar-title-md, .toolbar-title-ios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-inner{
+    width: 22rem !important;
+}
+.manu-heading{
+    background: linear-gradient(45deg, #c961f7 0%, #8089ff 100%)  !important;
+}
+.user-position{
+    min-height:20rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.user-position img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.user-position h6, .user-position h5{
+    margin: 0;
+    padding: 0;
+}
+.user-position h5{
+    font-size: 1rem;
+    margin-top: 0.5rem;    
+}
+/* .label-md, .label-ios{
+    margin: 0px 0px 0px 0 !important;
+}
+.item-md, .item-ios{
+    padding-left: 0px !important;
+}
+.item-md.item-block .item-inner{
+    padding-right: 0px !important;
+} */
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: rgba(255, 255, 255, 1) !important;
+}
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+    color: rgba(255, 255, 255, 1) !important;
+}
+.tabs-ios .tab-button-icon {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+.tabs-md .tab-button-icon {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+.tabs-md-light .tabbar {
+    background-color: rgb(253, 28, 76) !important;
+}
+.tabs-ios-light .tabbar {
+    background-color: rgb(253, 28, 76) !important;
+}
+
+.tabs-md .tab-button{
+    min-height: 4.8rem !important;
+}
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+    margin-top: 0px !important;
+}
+.tabs-md .tab-button-text{
+    font-size: 1rem !important;
+    color: #ffffff;
+}
+.tabs-ios .tab-button-text{
+    font-size: 1rem !important;
+}
+.tabs-ios .tab-button{
+    min-height: 4.8rem !important;
+}
+/*menu*/
+
+.discover-bg{
+    position: relative;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+    /* min-height: 200px; */
+    background: linear-gradient(to top, rgba(253, 28, 76, 0.2),rgba(253, 28, 76, 0.3)), url(../../assets/imgs/event-production.jpg);
+    background-size: contain;
+}
+.ionic3-star-rating .button{
+    height: 24px !important;
+    width: 24px !important;
+}
+
