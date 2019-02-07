@@ -21,17 +21,17 @@
   <ion-card>
     <ion-item>
         <ion-avatar item-start>
-          <img src="assets/imgs/author-01.png">
+          <img src="{{allUrl?.url}}/img/medium/{{items?.celebrity_photos[0]?.image}}">
         </ion-avatar>
       <h2><div>
-          {{value}}
+          {{items?.name}}
           </div></h2>
       <p>Celebrity</p>
     </ion-item>
 
     <img src="assets/imgs/events.jpg">
     <ion-card-content>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy. Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy. Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <p>  {{items?.description}}</p>
     </ion-card-content>
 
     <ion-card-content>
@@ -43,7 +43,7 @@
     activeColor = "#eff172" 
     defaultColor = "#f4f4f4"
     readonly="false"
-    [rating]="5">
+    rating="{{ percent }}">
   </ionic3-star-rating>
 </ion-col>
 </ion-card-content>
@@ -51,7 +51,7 @@
       <ion-col>
         <button ion-button icon-start clear small>
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>12000 Followers</div>
+          <div>{{ cele_count}} Followers</div>
         </button>
       </ion-col>
       <ion-col>

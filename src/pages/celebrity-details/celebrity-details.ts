@@ -21,9 +21,17 @@ export class CelebrityDetailsPage {
   items:any; 
   itemsdata:any;
   value:any;
+  product: any;
+  allUrl:any=apiUrl;
+  cele_count:any;
+  percent:number=0;
+  count:number=0;
+  arr_count:number=0;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: Http) {
-    this.value = navParams.get('item');
-    console.log(this.value);
+    this.product = this.navParams.get('data');
+
+   // console.log(this.product);
   }
   ngOnInit(){
     this.celebritydetail();
@@ -47,12 +55,27 @@ export class CelebrityDetailsPage {
       // } 
       
       this.http
-        .get(`http://localhost/git_project/WebIdeasole/celebritycalling/apies/single_celebrity`, {headers: header})
+        .get(`${this.allUrl.url}/apies/single_celebrity/${this.product}`, {headers: header})
         .map(res => res.json())
         .subscribe(
           data => {
-         //   console.log(data);
+         //  console.log(data);
               this.items=data;
+             
+              data.celebrity_rattings.forEach(ele => {
+                
+              
+                this. count = (this.count) + parseInt(ele.rating);
+                  this.arr_count++;
+                })
+              // console.log(this.count);
+              //  console.log(this.arr_count);
+                 this.percent =(this.count/this.arr_count) 
+                this.cele_count=(data.event_follows).length;
+          
+              // console.log(percent);
+                
+              
 
       });
   }

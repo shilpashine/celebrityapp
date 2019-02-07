@@ -1,0 +1,35 @@
+page-celebrity-list {
+    ion-tabs.hidden div.tabbar {
+        display: none !important;
+    }
+    ion-item{
+        margin-bottom: 1rem !important;
+    }
+    .item-md ion-avatar ion-img, .item-md ion-avatar img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .item-md{
+        background: linear-gradient(to top, rgba(253, 28, 76, 0.8),rgba(253, 28, 76, 0.8));
+        border-radius: 5px !important;
+        color: #ffffff !important;
+    }
+    .item-ios{
+        background: linear-gradient(to top, rgba(253, 28, 76, 0.8),rgba(253, 28, 76, 0.8));
+        border-radius: 5px !important;
+        color: #ffffff !important;
+    }
+    .item-md h2{
+        font-size: 2.4rem !important;
+    }
+    .item-md p, .item-ios p{
+        color: #ffffff !important;
+    }
+    .p-5{
+        padding: 10px 0px 0px 0px;
+    }
+}

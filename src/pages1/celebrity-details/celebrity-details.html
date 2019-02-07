@@ -1,0 +1,85 @@
+<!--
+  Generated template for the CelebrityDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <!-- <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button> -->
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="body">
+
+  <ion-card>
+    <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/author-01.png">
+        </ion-avatar>
+      <h2><div>
+          {{value}}
+          </div></h2>
+      <p>Celebrity</p>
+    </ion-item>
+
+    <img src="assets/imgs/events.jpg">
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy. Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy. Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+
+    <ion-card-content>
+        <ion-col>
+            <h5>Reatings</h5>
+    <ionic3-star-rating  float-left
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "#eff172" 
+    defaultColor = "#f4f4f4"
+    readonly="false"
+    [rating]="5">
+  </ionic3-star-rating>
+</ion-col>
+</ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12000 Followers</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+            <ion-icon name="film"></ion-icon>
+          <div>40 Shows</div>
+        </button>
+      </ion-col>
+      <!-- <ion-col>
+        <button ion-button icon-start clear small>
+            <ion-icon name="share-alt"></ion-icon>
+          <div>Share</div>
+        </button>
+      </ion-col> -->
+    </ion-row>
+  </ion-card>
+
+  
+
+  <ion-fab right bottom>
+      <button ion-fab color="light"><ion-icon name="share"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+        <!-- <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button> -->
+        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+  
+
+</ion-content>

@@ -28,10 +28,11 @@ export class HomePage implements OnInit{
   catdata:any;
   currentDate:any;
   date_cuu:any;
-  url_imp: any = apiUrl;
+  allUrl:any=apiUrl;
   percent_arry:any=[];
-
+  itemname:any;
   percent_arrylist:any=[];
+  itemid:any=[];
   constructor(public navCtrl: NavController,  public menuCtrl: MenuController,private http: Http) {
 
   }
@@ -44,6 +45,8 @@ export class HomePage implements OnInit{
     this.eventalllist();
     this.categoryalllist();
     //this.calculateDif();
+
+    console.log(this.allUrl);
   }
   goToAllCelebrity(){
     this.navCtrl.push(CelebrityListPage); 
@@ -51,11 +54,15 @@ export class HomePage implements OnInit{
   goToAllEvents(){
 		this.navCtrl.push(EventListPage);
   }
-  goToSingleEvent(){
-		this.navCtrl.push(EventDetailsPage);
+  goToSingleEvent(itemname){
+		this.navCtrl.push(EventDetailsPage,{
+    data:itemname
+    });
   }
-  goToSingleCelebrity(){
-		this.navCtrl.push(CelebrityDetailsPage);
+  goToSingleCelebrity(itemid){
+		this.navCtrl.push(CelebrityDetailsPage, {
+      data:itemid
+    });
   }
   goToNotification(){
 		this.navCtrl.push(NotificationPage);
@@ -65,10 +72,6 @@ export class HomePage implements OnInit{
   }
 
 
-public test(event ,items ){
-  this.navCtrl.push(CelebrityDetailsPage, {items: items}); 
-
-}
 
   celebritylist() {
 
@@ -82,7 +85,7 @@ public test(event ,items ){
       // } 
       
       this.http
-        .get(`http://localhost/git_project/WebIdeasole/celebritycalling/apies/listCelebrity`, {headers: header})
+        .get(`${apiUrl.url}/apies/listCelebrity`, {headers: header})
         .map(res => res.json())
         .subscribe(
           data => {
@@ -106,7 +109,7 @@ public test(event ,items ){
       // } 
       
       this.http
-        .get(`http://localhost/git_project/WebIdeasole/celebritycalling/apies/listEventCity`, {headers: header})
+        .get(`${apiUrl.url}/apies/listEventCity`, {headers: header})
         .map(res => res.json())
         .subscribe(
           data => {
@@ -142,7 +145,7 @@ public test(event ,items ){
       // } 
       
       this.http
-        .get(`http://localhost/git_project/WebIdeasole/celebritycalling/apies/listEventAll`, {headers: header})
+        .get(`${apiUrl.url}/apies/listEventAll`, {headers: header})
         .map(res => res.json())
         .subscribe(
           data => {
@@ -154,7 +157,7 @@ public test(event ,items ){
                   count = count + data_details.product_price;
                 })
 
-                let percent =Math.round((  count/ele.target_amount )*100)
+                let percent =Math.round((count/ele.target_amount )*100)
                 this.percent_arrylist.push(percent);
           
               //  console.log(this.percent_arrylist);
@@ -175,7 +178,7 @@ public test(event ,items ){
       // } 
       
       this.http
-        .get(`http://localhost/git_project/WebIdeasole/celebritycalling/apies/list_category`, {headers: header})
+        .get(`${apiUrl.url}/apies/list_category`, {headers: header})
         .map(res => res.json())
         .subscribe(
           data => {
